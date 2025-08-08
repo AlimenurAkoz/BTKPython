@@ -1,0 +1,12 @@
+L=[]
+while True:
+    TC=int(input("TC gir: "))
+    if TC in L:#hasta sırasını öğrenme
+        i=L.index(TC)
+        print("Muayene Sırası: ", i+1)
+    elif TC==0:#ilk hastayı çağırma
+        print(L[0], 'TC numaralı hasta içeri giriniz.')
+        L.pop(0)
+    else:#yeni hasta kayıt yapma
+        L.append(TC)
+        print(TC," sıraya alındı")

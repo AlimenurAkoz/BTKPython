@@ -1,0 +1,9 @@
+L=[]
+toplam=0
+for i in range(0,5):
+    sayi=int(input("Sayı giriniz:"))
+    L.append(sayi)
+    toplam+=sayi
+
+print("En büyük ve en küçük sayıların toplamı= ", min(L)+max(L))
+print("Listenin ortalaması= ", toplam/len(L))
