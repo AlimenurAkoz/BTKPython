@@ -1,0 +1,65 @@
+from turtle import*
+import time #zamanlamayı sağlar
+w = Screen()
+w.setup(300,700)
+w.title("Trafik Işığı Uygulaması")
+
+penup()
+goto(0,180)
+pendown()
+pensize(4)
+
+for i in range(2):
+    forward(80)
+    right(90)
+    forward(220)
+    right(90)
+
+def kirmizi():
+    penup()
+    goto(40,140)
+    fillcolor("red")
+    shape("circle")
+    shapesize(3)
+
+def sari():
+    penup()
+    goto(40,70)
+    fillcolor("yellow")
+    shape("circle")
+    shapesize(3)
+
+def yesil():
+    penup()
+    goto(40,0)
+    fillcolor("green")
+    shape("circle")
+    shapesize(3)
+
+sayac=0
+while True:
+   
+    yesil()
+    time.sleep(3)#9 saniye yanacak
+    sari()
+    time.sleep(3)
+    kirmizi()
+    time.sleep(3)
+    sayac+=1
+    if sayac >=3:
+        while True:
+            cevap=w.textinput("Durdurmak istiyor musunuz?", "Evet ise e, Hayır ise h: ")
+            if cevap is None:
+                print("Döngü durdu")
+                mainloop()
+                exit()  # Programı durdurur
+            cevap = cevap.lower()
+            if cevap == "e":
+                print("Döngü durdu")
+                mainloop()
+                exit()  # Programı durdurur
+            elif cevap == "h":
+                break  # İç döngüden çık ve devam et
+            else:
+                print("Lütfen sadece 'e' veya 'h' giriniz.")
+    

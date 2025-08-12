@@ -1,0 +1,24 @@
+from turtle import*
+shape("turtle")
+pensize(4)
+w=Screen()
+w.setup(500,500)#uygulama yapılan ekranın büyüklüğü
+def solaDon():
+    left(90)
+    write("Sola döndüm")
+def sagaDon():
+    right(90)
+    write("Sağa döndüm")
+def ileri():
+    forward(40)
+def geri():
+    backward(40)
+w.onkeypress(solaDon,"Left")#Left tuşuna basıldığında solaDon fonksiyonu çağırılsın
+w.onkeypress(sagaDon,"Right")
+w.onkeypress(ileri,"Up")
+w.onkeypress(geri,"Down")
+
+w.listen()#bu kodu yazmayınca klavyeden gelen komutu dinlemez
+w.mainloop()
+
+    

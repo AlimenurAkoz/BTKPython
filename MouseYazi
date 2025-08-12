@@ -1,0 +1,17 @@
+from turtle import*
+pensize(3)
+win=Screen()
+win.setup(700,700)
+penup()
+def Nokta (x,y):
+    goto(x,y)
+    pendown()
+
+def NoktaSag(x,y):
+    penup()
+    goto(x,y)
+    
+
+win.onclick(Nokta)#tıklama olduğunda Nokta fonksiyonunu çalıştır
+win.onclick(NoktaSag, btn=3)#sağ tıka basıldığında kalemi kaldırır bu da boşluk bırakmaya yarar
+mainloop()
